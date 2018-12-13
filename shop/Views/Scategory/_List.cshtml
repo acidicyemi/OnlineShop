@@ -1,0 +1,43 @@
+﻿@model shop.ViewModel.ScategoryViewModel
+
+<table id="example1" class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ScategoryList[0].ScategoryId)
+            </th>
+            <th>
+                @Html.DisplayName("Name")
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.ScategoryList.Count() < 1)
+        {
+            <h5 class="text-danger text-center">No result available! Add new category</h5>
+
+        }
+        else
+        {
+            @foreach (var item in Model.ScategoryList)
+            {
+                <tr id="row_@item.ScategoryId">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ScategoryId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        <a href="/" class="btn btn-warning btn-xs edit-btn">Shops</a>
+                        <a href="#" class="btn btn-primary btn-xs edit-btn" onclick="Update(@item.ScategoryId)">Edit</a>
+                        <a href="#" class="btn btn-danger btn-xs" onclick="Delete(@item.ScategoryId)">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+

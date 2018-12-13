@@ -1,0 +1,128 @@
+﻿@model shop.ViewModel.ScategoryViewModel
+
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Index";
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Shop's Categories</h1>
+            </div>
+            <div class="col-sm-6">
+                <div class="breadcrumb float-sm-right">
+                    <button type="button" id="add-cat" class="btn btn-primary">Add +</button>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="row" id="edit-div">
+                @{await Html.RenderPartialAsync("_Add");}
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">All Shop's Categories</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    @await Html.PartialAsync("_List")
+                    <input type="hidden" id="hiddenScategoryId" value="" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@*<a href="#" class="btn btn-success" onclick="DeleteScategory()">Update</a>*@
+
+
+<!-- Modal for Edit-->
+<div class="modal fade " id="modell" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" style="opacity:1;z-index:2000" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Edit Shop Category</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="myModalBody">
+                @await Html.PartialAsync("_Edit", Model.Scategory);
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <a href="#" id="btnSubmit" onclick="UpdatePost()" class="btn btn-primary">Update</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Delete-->
+<div class="modal fade " id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" style="opacity:1;z-index:2000" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Are you sure?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="myModalBody">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                <a href="#" id="btnSubmit" onclick="ConfirmDelete()" class="btn btn-success">Yes</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var Update = function (ScategoryId) {
+        $('#overlay').show();
+        $.ajax({
+            url: "@Url.Action("Update", "Scategory")",
+            data: { ScategoryId: ScategoryId },
+            success: function (response) {
+                $("#myModalBody").html(response);
+                $('#overlay').hide();
+                $('#modell').modal({show: true});
+            }
+        })
+    }
+
+    var Delete = function (ScategoryId) {
+        $('#overlay').show();
+        $("#hiddenScategoryId").val(ScategoryId);
+        $('#modalDelete').modal('toggle');
+        $('#overlay').hide();
+        
+    }
+
+    var ConfirmDelete = function () {
+        $('#overlay').show();
+        var ScatId = $("#hiddenScategoryId").val();
+
+        $.ajax({
+            url: "@Url.Action("Delete", "Scategory")",
+            data: { ScategoryId: ScatId },
+            success: function (result) {
+                $('#modalDelete').modal('toggle');
+                window.location.href = "@Url.Action("Index", "Scategory")";
+                $('#overlay').show();
+            },
+            error: function () {
+                $('#overlay').show();
+                window.location.href = "@Url.Action("Index", "Scategory")";
+
+            }
+        })
+
+    }
+</script>
+
+

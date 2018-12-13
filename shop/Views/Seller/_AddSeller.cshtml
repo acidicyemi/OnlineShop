@@ -1,0 +1,118 @@
+﻿@model shop.ViewModel.RegisterSellerViewModel
+
+<div class="container-contact100">
+    <div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
+
+    <div class="wrap-contact100">
+        <div class="contact100-form-title" style="background-image: url(images/bg-01.jpg);">
+            <span class="contact100-form-title-1">
+                Contact Us
+            </span>
+
+            <span class="contact100-form-title-2">
+                Feel free to drop us a line below!
+            </span>
+        </div>
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert alert-danger">
+                <b>Error! @ViewBag.Message</b>
+            </div>
+
+        }
+        <form class="contact100-form validate-form" method="post" asp-controller="Seller" asp-action="Register" enctype="multipart/form-data">
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100">First Name*:</span>
+                <input class="input100" type="text" asp-for="FirstName" placeholder="Enter first name">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100">Middle Name:</span>
+                <input class="input100" type="text" asp-for="MiddleName" placeholder="Enter middle name">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100">Last Name*:</span>
+                <input class="input100" type="text" asp-for="Lastname" placeholder="Enter last name">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100">Email*:</span>
+                <input class="input100" type="text" asp-for="Email" placeholder="Enter last name">
+                <span class="focus-input100" asp-validation-for="Email"></span>
+                @Html.ValidationMessage("EmailExist", new { @class = "text dannger" })
+            </div>
+
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100">Date of Birth*:</span>
+                <input class="input100" type="text" asp-for="Dob" placeholder="Enter last name">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100">Category of Your Shop*:</span>
+                <select asp-for="ScategoryId">
+                    <option value="">--Select Shop Category--</option>
+                    @foreach (var item in Model.ScategoryList)
+                    {
+                        <option value="@item.ScategoryId">@item.Name</option>
+                    }
+                </select>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100">Phone*:</span>
+                <input class="input100" type="text" asp-for="Phone" placeholder="Phone Number">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100">Brand Name*:</span>
+                <input class="input100" type="text" asp-for="ShopName" placeholder="Phone Number">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100">Brand Image (if any):</span>
+                <input class="input100" type="file" asp-for="BrandImage" placeholder="Phone Number">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100">Upload a Valid ID*:</span>
+                <input class="input100" type="file" asp-for="IdCard" placeholder="Phone Number">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100">Address*:</span>
+                <input class="input100" type="text" asp-for="Address" placeholder="Enter middle name">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100">Middle Name:</span>
+                <input class="input100" type="password" asp-for="Password" placeholder="Enter middle name">
+                <span class="focus-input100"></span>
+            </div>
+
+
+            <div class="container-contact100-form-btn">
+                <button class="contact100-form-btn">
+                    <span>
+                        Submit
+                        <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<div id="dropDownSelect1"></div>

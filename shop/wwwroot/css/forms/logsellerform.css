@@ -1,0 +1,268 @@
+.fdl-color {
+    background-color: #0069d9 !important;
+}
+
+.wdb-login {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-top: 158px;
+}
+
+.flex-row {
+    -ms-flex-direction: row !important;
+    flex-direction: row !important;
+}
+
+.feature li {
+    font-size: 16px;
+    font-weight: 300;
+    text-decoration: none solid rgb(255, 255, 255);
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 300;
+    text-decoration: none solid rgb(255, 255, 255)
+}
+
+.pad-box {
+    padding: 123px 50px 123px 40px;
+    width: 431px
+}
+
+.card-left {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 20% 40px 60px 40px;
+    vertical-align: 50%;
+}
+
+    .card-left p {
+        font-size: 16px;
+        color: #0069d9;
+        font-weight: 300;
+        text-decoration: none solid rgb(69, 90, 100);
+        margin-bottom: 40px
+    }
+
+label.login-label {
+    font-size: 14px;
+    color: #0069d9;
+    font-weight: 300;
+    text-decoration: none solid rgb(69,90,100);
+    margin-bottom: 6px;
+}
+
+div #side-icon1, #side-icon2 {
+    border-right: 0;
+    background-color: #ffffff;
+}
+
+div #Username, #Password {
+    text-indent: 30px;
+}
+
+.img-pos {
+    position: absolute;
+    padding: 8px;
+}
+
+#Username::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    opacity: 0.4;
+    font-size: 14px;
+    color: #181639;
+    font-weight: 14px;
+    text-decoration: none solid rgb(24, 27, 57);
+}
+
+#Username:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    opacity: 0.4;
+    font-size: 14px;
+    color: #181639;
+    font-weight: 14px;
+    text-decoration: none solid rgb(24, 27, 57);
+}
+
+#Username::-ms-input-placeholder { /* Microsoft Edge */
+    opacity: 0.4;
+    font-size: 14px;
+    color: #181639;
+    font-weight: 14px;
+    text-decoration: none solid rgb(24, 27, 57);
+}
+
+div #login-btn {
+    border-radius: 50px;
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none solid rgb(255, 255, 255);
+    padding-left: 50px;
+    padding-right: 50px;
+    font-weight: 500
+}
+
+/* main Body */
+
+
+.main-body {
+    /* transition: margin-left 0.3s ease-in-out; */
+    margin-left: 343px;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+    .main-body hr {
+        margin-top: -20px;
+        border-style: inset;
+        border-width: 1px;
+    }
+
+    .main-body .head-title {
+        font-size: 20px;
+        color: #0069d9;
+        font-weight: 300;
+        text-decoration: none solid rgb(69,90,100);
+        margin-top: 18px
+    }
+
+.bordered-div {
+    width: 100%;
+    margin-top: 40px;
+    border: 1px solid #0069d9;
+    background-color: #ffffff;
+}
+
+.bordered-div2 {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #ffffff;
+}
+
+.head-title-box {
+    margin: 0;
+    height: 45px;
+    background-color: #0069d9;
+    background-size: cover
+}
+
+    .head-title-box p {
+        font-size: 18px;
+        color: #ffffff;
+        font-weight: 100;
+        text-decoration: none solid rgb(69,90,100);
+        text-align: justify;
+        padding-left: 35px;
+        padding-top: 8px
+    }
+
+.btn-role {
+    background-color: #0069d9;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 100;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-align: center;
+    padding: 5px 17px 5px 17px;
+    border: none;
+    margin: 33px 0 21px 37px;
+    display: block
+}
+
+.box-input {
+    border: 1px solid #0069d9;
+    font-size: 15px;
+    font-weight: 100;
+    text-decoration: none solid rgba(69, 90, 100, 0.6);
+    margin: 0 0 20px 37px;
+    padding-left: 15px;
+    width: 216px
+}
+
+    .box-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        opacity: 0.5;
+        font-size: 14px;
+        color: #181639;
+        font-weight: 14px;
+        text-decoration: none solid rgb(24, 27, 57);
+    }
+
+    .box-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        opacity: 0.5;
+        font-size: 14px;
+        color: #181639;
+        font-weight: 14px;
+        text-decoration: none solid rgb(24, 27, 57);
+    }
+
+    .box-input::-ms-input-placeholder { /* Microsoft Edge */
+        opacity: 0.5;
+        font-size: 14px;
+        color: #181639;
+        font-weight: 14px;
+        text-decoration: none solid rgb(24, 27, 57);
+    }
+
+.small-title {
+    font-size: 15px;
+    color: #0069d9;
+    font-weight: 100;
+    text-decoration: none solid rgb(69, 90, 100);
+    margin-left: 37px;
+}
+
+.text-radio {
+    font-size: 13px;
+    color: #0069d9;
+    font-weight: 100;
+    text-decoration: none solid rgb(69, 90, 100);
+    margin-left: 37px
+}
+
+.btn-save {
+    background-color: #0069d9;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 100;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-align: center;
+    padding: 5px 17px 5px 17px;
+    border: none;
+    margin: 0 0 21px 37px;
+    display: block
+}
+
+.bordered-div2 tr {
+    font-size: 15px;
+    color: #0069d9;
+    font-weight: 300;
+    text-decoration: none solid rgb(69, 90, 100)
+}
+
+.bordered-div2 a {
+    font-size: 15px;
+    color: #0069d9;
+    font-weight: 300;
+    text-decoration: none solid rgb(69, 90, 100)
+}
+
+    .bordered-div2 a:hover {
+        text-decoration: underline;
+        color: #0069d9;
+    }
+
+.bordered-div2 button {
+    font-size: 14px;
+    color: #0069d9;
+    font-weight: 100;
+    background-color: #cecece;
+    border: 0;
+    font-size: 14px;
+    width: 96px;
+    text-decoration: none solid rgba(0,0,0,0.2);
+}

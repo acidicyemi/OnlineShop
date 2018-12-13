@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Success</title>
+    <link type="text/css" rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    @if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
+    {
+    <div class="text-center" style="margin-top:150px">
+        <h1 class="display-3">Success!</h1>
+        <p class="lead">Your account has been successfully activated</p>
+        <hr>
+        <p>
+            Go to your dashboard to manage you shop
+        </p>
+        <p class="lead">
+            <a class="btn btn-success btn-sm" asp-controller="Login" asp-action="Seller" role="button">Login to your account</a>
+        </p>
+    </div>
+    }else{
+        <div>
+            <strong>Error!!!</strong> @ViewBag.Message
+        </div>
+    }
+    
+
+</body>
+</html>

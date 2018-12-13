@@ -1,0 +1,34 @@
+﻿@model shop.Data.Models.Scategory
+
+
+
+<div class="input-group input-group-sm co">
+    <form id="editForm">
+        <div class="form-group">
+            <input asp-for="ScategoryId" class="form-control" type="hidden" />
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+    </form>
+</div>
+
+
+<script>
+
+    var UpdatePost = function () {
+        $('#overlay').show();
+        var formData = $("#editForm").serialize();
+        $.ajax({
+                type: "POST",
+                url: "@Url.Action("Update", "Scategory")",
+                data: formData,
+                success: function () {
+                    $('#modell').hide();
+                    window.location.href = "@Url.Action("Index", "Scategory")";
+                }
+
+        })
+        
+    }
+</script>

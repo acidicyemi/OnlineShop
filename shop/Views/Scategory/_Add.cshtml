@@ -1,0 +1,10 @@
+﻿@model shop.ViewModel.ScategoryViewModel
+
+<div class="input-group input-group-sm col-md-6" id="add-form" style="margin-bottom:20px;display:none">
+    <form method="post" asp-controller="Scategory" asp-action="Create">
+        <input asp-for="Scategory.Name" placeholder="Add Category" class="form-control" style="height:100%" />
+        <span class="input-group-append" style="height:100%">
+            <input type="submit" class="btn btn-info btn-flat" value="Add Category" />
+        </span>
+    </form>
+</div>
